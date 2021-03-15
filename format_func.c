@@ -1,8 +1,8 @@
-nclude "holberton.h"
+#include "holberton.h"
 #include <stdio.h>
 /**
- * print_char - prints char 
- * @arglist - lists inplace format values
+ * print_char - prints char
+ * @arglist: - lists inplace format values
  * Return: number of chars printed
  */
 int print_char(va_list arglist)
@@ -15,8 +15,8 @@ _putchar(ch);
 return (1);
 }
 /**
- * print_string - prints char 
- * @arglist - lists inplace format values
+ * print_string - prints char
+ * @arglist: - lists inplace format values
  * Return: number of chars printed
  */
 int print_string(va_list arglist)
@@ -37,8 +37,8 @@ _putchar(str[c++]);
 return (c);
 }
 /**
- * print_digit - prints char 
- * @arglist - lists inplace format values
+ * print_digit - prints char
+ * @arglist: - lists inplace format values
  * Return: number of chars printed
  */
 int print_digit(va_list arglist)
@@ -59,7 +59,7 @@ j++;
 numc = num;
 for (dig_len = 1; numc > 0; dig_len++)
 numc /= 10;
-for (i = 1; i < dig_len; i++)
+for (i = 1; i < dig_len - 1; i++)
 base *= 10;
 while (base >= 1)
 {
@@ -69,8 +69,8 @@ base /= 10;
 return (dig_len + j);
 }
 /**
- * print_sign - prints % sign 
- * @arglist - lists inplace format values
+ * print_sign - prints % sign
+ * @arglist: - lists inplace format values
  * Return: number of chars printed
  */
 int print_sign(va_list arglist)
@@ -78,4 +78,18 @@ int print_sign(va_list arglist)
 if (va_arg(arglist, int))
 _putchar(37);
 return (1);
+}
+/**
+ * print_message - to print "Unknown:[%value]"
+ * @ch: - char value message
+ * Return: int number of chars printed
+ */
+int print_message(char ch)
+{
+char *msg = "Unknown:[";
+write(1, msg, 10);
+_putchar(37);
+_putchar(ch);
+_putchar(']');
+return (12);
 }
