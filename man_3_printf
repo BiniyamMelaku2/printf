@@ -15,7 +15,7 @@ after the formatted string are used as inplace replacement within string after %
 
 %d - to specify an inplace integer or number
 
-%i - to specify an inplace integer 
+%i - to specify an inplace integer
 
 %% - to specify an inplace percentage sign
 
