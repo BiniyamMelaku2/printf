@@ -22,8 +22,9 @@ int print_char(va_list);
 int print_string(va_list);
 int print_digit(va_list);
 int print_sign(va_list);
-char *convert(int num, int base);
+char *convert(unsigned int num, int base);
 int print_converted(char *str);
 int print_message(char ch);
 int decimal_conversion(char ch, va_list arglist);
+int print_hex(char *str, int s);
 #endif
