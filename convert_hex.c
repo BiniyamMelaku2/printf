@@ -64,11 +64,11 @@ unsigned long int num;
 unsigned int ret = 0;
 char *lead = "0X";
 
-if (num == LONG)
+if (len == LONG)
 num = va_arg(args, unsigned long);
 else
 num = va_arg(args, unsigned int);
-if (num == SHORT)
+if (len == SHORT)
 num = (unsigned short)num;
 
 if (HASH_FLAG == 1 && num != 0)
