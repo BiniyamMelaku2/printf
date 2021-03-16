@@ -23,12 +23,10 @@ int print_string(va_list arglist)
 {
 char *str;
 int c = 0;
-const char *empty = "(null)";
 str = va_arg(arglist, char *);
 if (str == NULL)
 {
-write(1, empty, 6);
-return (6);
+str = "(null)";
 }
 while (str[c])
 {
@@ -80,16 +78,13 @@ _putchar(37);
 return (1);
 }
 /**
- * print_message - to print "Unknown:[%value]"
+ * print_message - to print "Unknown:[%r]"
  * @ch: - char value message
  * Return: int number of chars printed
  */
 int print_message(char ch)
 {
-char *msg = "Unknown:[";
-write(1, msg, 10);
 _putchar(37);
-_putchar(ch);
-_putchar(']');
+write(1, &ch, 1);
 return (12);
 }
