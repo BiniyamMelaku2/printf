@@ -1,45 +1,31 @@
 #include "holberton.h"
 /**
- * _printf - produces output according to a format.
- * @format: format string
- * Return: number of printed chars
- */
+ * _printf - main entry.
+ * @format: list of types of arguments passed
+ * Return: void
+ **/
 int _printf(const char *format, ...)
 {
-va_list arglist;
-int index = 0, j = 0, count_char = 0;
-format_chars format_char [] = {
-{"c", print_char},
-{"s", print_string},
-{"d", print_digit},
-{"i", print_digit},
-{"%", print_sign},
-{NULL, NULL},
-};
-va_start(arglist, format);
-while (format != NULL && format[index] != '\0')
+int count = 0;
+va_list valist;
+if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+return (-1);
+
+va_start(valist, format);
+
+for (; *format != '\0'; format++)
 {
-if (format[index] == '%')      /* ("%d", 23), ("%r")  */
+if (*format != '%')
 {
-index++;
-for (j = 0; format_char[j].ch != NULL; j++)
+_putchar(*format);
+count++;
+}
+else
 {
-if (*format_char[j].ch == format[index])
-{
-count_char += format_char[j].func(arglist);
-break;
+format++;
+count += format_spec(&format, valist);
 }
 }
-if (j > 4)
-{
-count_char += decimal_conversion(format[index], arglist);
-}
-index++;
-}
-_putchar(format[index]);
-count_char++;
-index++;
-}
-va_end(arglist);
-return (count_char);
+va_end(valist);
+return (count);
 }
