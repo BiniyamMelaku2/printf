@@ -8,7 +8,8 @@ unsigned long int num, char *base,
 unsigned char flags, int wid, int prec);
 
 /**
- * convert_sbase - Converts a signed long to an inputted base and stores
+ * convert_sbase - a function that converts a signed long 
+ * to an inputted base and stores
  * the result to a buffer contained in a struct.
  * @output: A buffer_t struct containing a character array.
  * @num: A signed long to be converted.
