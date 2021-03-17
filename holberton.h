@@ -23,7 +23,7 @@
 #define LONG 2
 
 /**
- * struct buffer_s - A new type defining a buffer struct.
+ * struct buffer_s - a new type defining a buffer struct.
  * @buffer: A pointer to a character array.
  * @start: A pointer to the start of buffer.
  * @len: The length of the string stored in buffer.
