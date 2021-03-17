@@ -1,6 +1,6 @@
 .TH man_3_printf "15 March 2021" "0.32" "_printf man page"
 .SH NAME
-.B _printf - Displays formatted string to the console or standard output.
+.B _printf - Displays formatted string to the console / standard output.
 
 .SH SYNOPSIS
 _printf (const char *format, ...);
